@@ -15,7 +15,7 @@ export const INFO = {
 export const EXP = [
   {
     title: "Online Quran Teacher",
-    company: "Hassaan Academy",
+    company: "Hassaan Online Academy",
     date: "Nov 2024 - Present",
     icon: "📚",
     logo: "/logos/hassaan-academy.png",
@@ -43,7 +43,7 @@ export const EXP = [
   },
   {
     title: "Online Quran Teacher",
-    company: "Hassaan Academy",
+    company: "Hassaan Online Academy",
     date: "Sep 2023 - May 2024",
     icon: "📖",
     logo: "/logos/hassaan-academy.png",
