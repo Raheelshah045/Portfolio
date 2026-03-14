@@ -19,6 +19,7 @@ export const EXP = [
     date: "Nov 2024 - Present",
     icon: "📚",
     logo: "/logos/hassaan-academy.png",
+    location: "Karachi, Pakistan",
     desc: [
       "Mentored international students in Quranic recitation with a focus on advanced Tajweed and pronunciation rules",
       "Developed and implemented personalized lesson plans and curricula for over 50+ active students across different age groups",
@@ -32,6 +33,7 @@ export const EXP = [
     date: "May - Oct 2024",
     icon: "🎓",
     logo: "/logos/qtv-tutor.png",
+    location: "Karachi, Pakistan",
     desc: [
       "Conducted interactive, one-on-one Quranic sessions designed to foster deep understanding and spiritual connection",
       "Created original, engaging educational content and multimedia resources tailored for diverse age groups and skill levels",
@@ -45,6 +47,7 @@ export const EXP = [
     date: "Sep 2023 - May 2024",
     icon: "📖",
     logo: "/logos/hassaan-academy.png",
+    location: "Karachi, Pakistan",
     desc: [
       "Delivered structured and comprehensive Quranic courses, covering basic reading to advanced memorization",
       "Architected personalized learning paths for students, allowing them to progress at their own pace while maintaining quality",
@@ -58,6 +61,7 @@ export const EXP = [
     date: "Jan 2020 - Apr 2025",
     icon: "🏠",
     logo: "/logos/home-tuition.png",
+    location: "Karachi, Pakistan",
     desc: [
       "Provided personalized home-based academic support for students from Grade 1 through Matriculation in various subjects",
       "Specialized in intensive Quranic studies and Islamic education, helping students master fundamental religious concepts",

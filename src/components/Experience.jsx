@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { MapPin } from 'lucide-react';
 import Section, { SectionTitle } from './Section';
 import { EXP } from '../data/info';
 
@@ -22,18 +23,26 @@ export default function Experience() {
             </div>
 
             <div className="experience-content">
-              <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0B1120', marginBottom: '0.5rem' }}>{e.title}</h3>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1rem' }}>
                 {e.logo && (
                   <div style={{
-                    width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    backgroundColor: 'white', borderRadius: '10px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-                    border: '1px solid #E2E8F0', padding: '0.25rem'
+                    width: '68px', height: '68px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    backgroundColor: 'white', borderRadius: '16px', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.05)',
+                    border: '1px solid #E2E8F0', padding: '0.5rem', flexShrink: 0
                   }}>
                     <img src={e.logo} alt={e.company} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                   </div>
                 )}
-                <p style={{ color: '#06B6D4', fontWeight: 700, fontSize: '1.125rem', margin: 0 }}>{e.company}</p>
+                <div>
+                  <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0B1120', marginBottom: '0.3rem', lineHeight: 1.2 }}>{e.title}</h3>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                    <span style={{ color: '#000080', fontWeight: 600, fontSize: '1.15rem' }}>{e.company}</span>
+                    <span style={{ color: '#64748B', display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '1rem' }}>
+                      <MapPin size={16} />
+                      {e.location || 'Karachi, Pakistan'}
+                    </span>
+                  </div>
+                </div>
               </div>
               <span style={{
                 background: 'linear-gradient(to right, #0B1120, #06B6D4)', color: 'white',
