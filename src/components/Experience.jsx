@@ -23,7 +23,18 @@ export default function Experience() {
 
             <div className="experience-content">
               <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0B1120', marginBottom: '0.5rem' }}>{e.title}</h3>
-              <p style={{ color: '#06B6D4', fontWeight: 700, fontSize: '1.125rem', marginBottom: '0.25rem' }}>{e.company}</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+                {e.logo && (
+                  <div style={{
+                    width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    backgroundColor: 'white', borderRadius: '10px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+                    border: '1px solid #E2E8F0', padding: '0.25rem'
+                  }}>
+                    <img src={e.logo} alt={e.company} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  </div>
+                )}
+                <p style={{ color: '#06B6D4', fontWeight: 700, fontSize: '1.125rem', margin: 0 }}>{e.company}</p>
+              </div>
               <span style={{
                 background: 'linear-gradient(to right, #0B1120, #06B6D4)', color: 'white',
                 padding: '0.5rem 1.25rem', borderRadius: '9999px', fontSize: '0.875rem',
