@@ -65,6 +65,14 @@ export const EXP = [
 
 export const PROJ = [
   {
+    title: "FinFlow (Balancify ERP)",
+    desc: "A comprehensive multi-tenant Enterprise Resource Planning platform for SMEs, featuring financial accounting, inventory management, stakeholder tracking, and real-time executive dashboards.",
+    img: "/finflow-preview.png",
+    tags: ["React", "Express", "MongoDB", "Full Stack"],
+    link: "https://finflow-3-xpyy.onrender.com/",
+    github: "https://github.com/Raheelshah045/FinFlow"
+  },
+  {
     title: "JARVIS AI Voice Assistant",
     desc: "A futuristic AI-powered voice assistant featuring advanced speech recognition, natural language processing, and automated system controls for a sci-fi inspired user experience.",
     img: "/jarvis-preview.png",
