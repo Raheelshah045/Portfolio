@@ -16,7 +16,7 @@ export const EXP = [
   {
     title: "Online Quran Teacher",
     company: "Hassaan Online Academy",
-    date: "Nov 2024 - Present",
+    date: "Nov 2025 - Present",
     icon: "📚",
     logo: "/logos/hassaan-academy.png",
     location: "Karachi, Pakistan",
@@ -30,7 +30,7 @@ export const EXP = [
   {
     title: "Tutor & Quranic Educator",
     company: "QTV Tutor",
-    date: "May - Oct 2024",
+    date: "May 2025 - Oct 2025",
     icon: "🎓",
     logo: "/logos/qtv-tutor.png",
     location: "Karachi, Pakistan",
@@ -44,7 +44,7 @@ export const EXP = [
   {
     title: "Online Quran Teacher",
     company: "Hassaan Online Academy",
-    date: "Sep 2023 - May 2024",
+    date: "Sep 2024 - May 2025",
     icon: "📖",
     logo: "/logos/hassaan-academy.png",
     location: "Karachi, Pakistan",
