@@ -1,7 +1,7 @@
 export const INFO = {
   name: "Raheel Jamal",
-  roles: ["Web Developer", "Quranic Educator", "Graphic Designer", "SEO Specialist"],
-  bio: "Educator with 5+ years of experience, currently pursuing BS Computer Science while creating impactful digital solutions.",
+  roles: ["Web Developer", "Academic & Islamic Studies Educator", "Graphic Designer", "SEO Specialist"],
+  bio: "I am Raheel Jamal, a passionate educator providing comprehensive academic tutoring across all grade levels alongside specialized Islamic and Quranic studies, currently pursuing BS Computer Science while creating impactful digital solutions.",
   email: "syedraheelshah0318@gmail.com",
   phone: "+923110338480",
   links: {
@@ -127,11 +127,19 @@ export const PROJ = [
     tags: ["Premiere Pro", "After Effects", "Editing"],
     link: "https://youtu.be/MF8Vlu7qRvw?si=3sB3VQ_A0bZXsKxx",
     github: "https://github.com/Raheelshah045"
+  },
+  {
+    title: "Ahmed Wood Art",
+    desc: "A premium woodwork & bespoke furniture brand website for Karachi's leading carpentry studio — featuring custom kitchen cabinets, wardrobes, and interior design showcases with a luxurious Next.js UI.",
+    img: "/woodart-preview.png",
+    tags: ["Next.js", "Web Design", "Frontend"],
+    link: "https://ahmed-woodart.vercel.app/",
+    github: "https://github.com/Raheelshah045/wood_website"
   }
 ];
 
 export const SKILLS = [
-  { cat: "Teaching", icon: "BookOpen", items: ["Quran", "Tajweed", "Hifz", "Tutoring"] },
+  { cat: "Teaching", icon: "BookOpen", items: ["Academic Tutoring", "Quranic Studies", "Tajweed", "Hifz", "Curriculum Design"] },
   { cat: "Web Dev", icon: "Code", items: ["HTML5", "CSS3", "Design", "GitHub"] },
   { cat: "Design", icon: "Palette", items: ["Photoshop", "Illustrator", "InDesign"] },
   { cat: "Marketing", icon: "TrendingUp", items: ["SEO", "Content", "Social Media"] },
