@@ -140,7 +140,7 @@ export const PROJ = [
 
 export const SKILLS = [
   { cat: "Teaching", icon: "BookOpen", items: ["Academic Tutoring", "Quranic Studies", "Tajweed", "Hifz", "Curriculum Design"] },
-  { cat: "Web Dev", icon: "Code", items: ["HTML5", "CSS3", "Design", "GitHub"] },
+  { cat: "Software & Web Dev", icon: "Code", items: ["Java", "HTML5", "CSS3", "Design", "GitHub"] },
   { cat: "Design", icon: "Palette", items: ["Photoshop", "Illustrator", "InDesign"] },
   { cat: "Marketing", icon: "TrendingUp", items: ["SEO", "Content", "Social Media"] },
   { cat: "Video", icon: "Star", items: ["Premiere Pro", "Filmora", "Editing"] }
@@ -153,7 +153,7 @@ export const EDU = [
     location: "Karachi, Pakistan",
     yr: "Ongoing",
     icon: "🎓",
-    desc: "Currently pursuing Bachelor's degree in Computer Science, focusing on software development, programming fundamentals, and modern computing technologies"
+    desc: "Currently pursuing Bachelor's degree in Computer Science, focusing on software development, programming fundamentals (Java, OOP), and modern computing technologies"
   },
   {
     deg: "Hifz-ul-Quran",
