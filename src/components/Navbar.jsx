@@ -32,7 +32,7 @@ export default function Navbar() {
           {INFO.name}
         </p>
 
-        <ul className="hidden md:flex gap-8" role="list" style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+        <ul className="hidden md:flex gap-8" style={{ listStyle: 'none', margin: 0, padding: 0 }}>
           {NAV_ITEMS.map(i => (
             <li key={i}>
               <button
