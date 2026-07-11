@@ -28,15 +28,16 @@ export default function Experience() {
                   <div style={{
                     width: '68px', height: '68px', display: 'flex', alignItems: 'center', justifyContent: 'center',
                     backgroundColor: 'white', borderRadius: '16px', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.05)',
-                    border: '1px solid #E2E8F0', padding: '0.5rem', flexShrink: 0
+                    border: '1px solid #E2E8F0', padding: e.logo.includes('ubl') ? '0' : '0.5rem',
+                    overflow: 'hidden', flexShrink: 0
                   }}>
-                    <img src={e.logo} alt={e.company} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                    <img src={e.logo} alt={e.company} style={{ width: '100%', height: '100%', objectFit: e.logo.includes('ubl') ? 'cover' : 'contain' }} />
                   </div>
                 )}
                 <div>
-                  <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0B1120', marginBottom: '0.3rem', lineHeight: 1.2 }}>{e.title}</h3>
+                  <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0B1120', marginBottom: '0.3rem', lineHeight: 1.2 }}>{e.title}</h2>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                    <span style={{ color: '#000080', fontWeight: 600, fontSize: '1.15rem' }}>{e.company}</span>
+                    <h3 style={{ color: '#000080', fontWeight: 600, fontSize: '1.15rem', margin: 0, padding: 0, display: 'inline' }}>{e.company}</h3>
                     <span style={{ color: '#64748B', display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '1rem' }}>
                       <MapPin size={16} />
                       {e.location || 'Karachi, Pakistan'}
@@ -59,6 +60,26 @@ export default function Experience() {
                   </li>
                 ))}
               </ul>
+              {e.skills && (
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '1.25rem' }}>
+                  {e.skills.map((skill, idx) => (
+                    <span
+                      key={idx}
+                      style={{
+                        padding: '0.35rem 0.85rem',
+                        backgroundColor: '#F8FAFC',
+                        color: '#475569',
+                        border: '1px solid #E2E8F0',
+                        borderRadius: '9999px',
+                        fontSize: '0.8rem',
+                        fontWeight: 500
+                      }}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           </motion.div>
         ))}

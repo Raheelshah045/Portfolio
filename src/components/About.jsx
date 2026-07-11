@@ -19,13 +19,13 @@ export default function About() {
         }}
       >
         <p style={{ fontSize: '1.05rem', color: '#0F172A', marginBottom: '1.25rem', lineHeight: '1.7' }}>
-          I am <span style={{ fontWeight: 700, color: '#0B1120' }}>{INFO.name}</span>, a passionate educator dedicated to teaching Quranic studies and academic subjects. Currently pursuing my Bachelor's degree in Computer Science at SZABIST University, I am bridging the gap between traditional education and modern technology.
+          I am <span style={{ fontWeight: 700, color: '#0B1120' }}>{INFO.name}</span>, a versatile professional bridging the gap between digital banking operations, educational instruction, and technology. Currently pursuing my Bachelor's degree in Computer Science at SZABIST University, I work as an ADC Operations Officer at UBL, supporting digital banking and international card processing.
         </p>
         <p style={{ fontSize: '1.05rem', color: '#475569', marginBottom: '1.25rem', lineHeight: '1.7' }}>
-          My journey combines years of experience in Quranic instruction—specializing in Nazira, Tajweed, and Hifz—with a growing expertise in the digital world. I have taught students across various age groups and backgrounds, helping them build strong foundations in both religious and academic subjects.
+          My journey combines hands-on experience in financial operations—specifically transaction monitoring, operational reporting, and workflow optimization—with a strong background in Quranic and academic education. This allows me to bring a structured, detail-oriented approach to both technical and operational challenges.
         </p>
         <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: '1.7' }}>
-          On the technical side, I work with web development, creating functional websites and applications. I'm proficient in graphic design using Adobe Creative Suite, crafting visual identities and marketing materials. Additionally, I focus on SEO and digital marketing strategies to help businesses establish their online presence. This unique blend of education and technology allows me to create meaningful learning experiences while developing innovative digital solutions.
+          On the technical and creative side, I work with web development, creating functional applications, and graphic design using Adobe Creative Suite. I also possess skills in SEO, digital marketing, and project management (Microsoft Project). This multi-disciplinary expertise enables me to optimize operational workflows, develop software solutions, and create premium branding and publication designs.
         </p>
       </motion.div>
     </Section>

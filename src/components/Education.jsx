@@ -20,7 +20,18 @@ export default function Education() {
               boxShadow: '0 20px 50px rgba(0,0,0,0.1)', border: '1px solid #E2E8F0'
             }}
           >
-            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>{e.icon}</div>
+            {e.logo ? (
+              <div style={{
+                width: '68px', height: '68px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                backgroundColor: 'white', borderRadius: '50%', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.05)',
+                border: '1px solid #E2E8F0', padding: (e.logo.includes('szabist') || e.logo.includes('gssc')) ? '0' : '0.5rem',
+                overflow: 'hidden', flexShrink: 0, marginBottom: '1.25rem'
+              }}>
+                <img src={e.logo} alt={e.inst} style={{ width: '100%', height: '100%', objectFit: (e.logo.includes('szabist') || e.logo.includes('gssc')) ? 'cover' : 'contain' }} />
+              </div>
+            ) : (
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>{e.icon}</div>
+            )}
             <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0B1120', marginBottom: '0.5rem' }}>{e.deg}</h3>
             <p style={{ color: '#06B6D4', fontWeight: 700, fontSize: '1.125rem', marginBottom: '0.25rem' }}>{e.inst}</p>
             <p style={{ color: '#475569', fontSize: '0.875rem', marginBottom: '0.5rem' }}>📍 {e.location}</p>

@@ -24,19 +24,21 @@ export default function Projects() {
             <div style={{
               overflow: 'hidden',
               aspectRatio: '16 / 9',
-              backgroundColor: '#0f172a',
+              backgroundColor: 'white',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              padding: '1rem'
             }}>
               <img
                 src={p.img}
-                alt={p.title}
+                alt={p.alt || p.title}
                 style={{
                   width: '100%',
                   height: '100%',
                   objectFit: 'contain',
-                  transition: 'transform 0.5s ease'
+                  transition: 'transform 0.5s ease',
+                  filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.15))'
                 }}
                 onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
                 onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
