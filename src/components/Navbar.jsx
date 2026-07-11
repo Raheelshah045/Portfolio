@@ -24,27 +24,29 @@ export default function Navbar() {
       }}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 style={{
-          fontSize: '1.5rem', fontWeight: 900,
+        <p style={{
+          fontSize: '1.5rem', fontWeight: 900, margin: 0,
           background: 'linear-gradient(to right, #0B1120, #06B6D4)',
           WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'
         }}>
           {INFO.name}
-        </h1>
+        </p>
 
-        <div className="hidden md:flex gap-8">
+        <ul className="hidden md:flex gap-8" role="list" style={{ listStyle: 'none', margin: 0, padding: 0 }}>
           {NAV_ITEMS.map(i => (
-            <button
-              key={i}
-              onClick={() => scroll(i.toLowerCase())}
-              style={{ color: '#475569', fontWeight: 600, background: 'none', border: 'none', cursor: 'pointer', transition: 'color 0.3s' }}
-              onMouseEnter={(e) => e.target.style.color = '#06B6D4'}
-              onMouseLeave={(e) => e.target.style.color = '#475569'}
-            >
-              {i}
-            </button>
+            <li key={i}>
+              <button
+                onClick={() => scroll(i.toLowerCase())}
+                aria-label={`Navigate to ${i} section`}
+                style={{ color: '#475569', fontWeight: 600, background: 'none', border: 'none', cursor: 'pointer', transition: 'color 0.3s' }}
+                onMouseEnter={(e) => e.target.style.color = '#06B6D4'}
+                onMouseLeave={(e) => e.target.style.color = '#475569'}
+              >
+                {i}
+              </button>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <button className="md:hidden" onClick={() => setMenu(!menu)} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
           {menu ? <X size={28} /> : <Menu size={28} />}
