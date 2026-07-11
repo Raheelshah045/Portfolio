@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Section, { SectionTitle } from './Section';
 import { INFO } from '../data/info';
 
@@ -51,6 +51,18 @@ const XIcon = () => (
 );
 
 export default function Contact() {
+  useEffect(() => {
+    // Dynamically load LinkedIn badge script after page content loads
+    const script = document.createElement('script');
+    script.src = 'https://platform.linkedin.com/badges/js/profile.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   const contactMethods = [
     {
       name: 'Email',
@@ -159,6 +171,51 @@ export default function Contact() {
             </p>
           </a>
         ))}
+      </div>
+
+      {/* LinkedIn Official Badge */}
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        marginTop: '4rem',
+        gap: '1rem'
+      }}>
+        <h3 style={{
+          fontSize: '1.25rem',
+          fontWeight: 700,
+          color: '#0B1120',
+          margin: 0
+        }}>Connect on LinkedIn</h3>
+        <p style={{ color: '#64748B', margin: 0, fontSize: '0.95rem' }}>
+          View my verified professional profile
+        </p>
+        <div
+          className="badge-base LI-profile-badge"
+          data-locale="en_US"
+          data-size="medium"
+          data-theme="light"
+          data-type="VERTICAL"
+          data-vanity="hafiz-raheel-shah"
+          data-version="v1"
+          style={{
+            borderRadius: '1rem',
+            overflow: 'hidden',
+            boxShadow: '0 20px 50px rgba(0,0,0,0.1)',
+            border: '1px solid #E2E8F0',
+            maxWidth: '100%'
+          }}
+        >
+          <a
+            className="badge-base__link LI-simple-link"
+            href="https://www.linkedin.com/in/hafiz-raheel-shah?trk=profile-badge"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Raheel Jamal's LinkedIn profile"
+          >
+            Raheel Jamal
+          </a>
+        </div>
       </div>
     </Section>
   );
