@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Code, Palette, TrendingUp, Star } from 'lucide-react';
+import { BookOpen, Code, Palette, TrendingUp, Star, Briefcase } from 'lucide-react';
 import Section, { SectionTitle } from './Section';
 import { SKILLS } from '../data/info';
 
-const ICON_MAP = { BookOpen, Code, Palette, TrendingUp, Star };
+const ICON_MAP = { BookOpen, Code, Palette, TrendingUp, Star, Briefcase };
 
 export default function Skills() {
   return (

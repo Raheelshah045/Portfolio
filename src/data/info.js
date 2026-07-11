@@ -1,7 +1,7 @@
 export const INFO = {
   name: "Raheel Jamal",
-  roles: ["Web Developer", "Academic & Islamic Studies Educator", "Graphic Designer", "SEO Specialist"],
-  bio: "I am Raheel Jamal, a passionate educator providing comprehensive academic tutoring across all grade levels alongside specialized Islamic and Quranic studies, currently pursuing BS Computer Science while creating impactful digital solutions.",
+  roles: ["ADC Operations Officer", "Web Developer", "Academic & Islamic Studies Educator", "Graphic Designer", "SEO Specialist"],
+  bio: "I am Raheel Jamal, an ADC Operations Officer at UBL and a passionate developer/educator currently pursuing BS Computer Science while bridging the gap between digital banking operations, education, and technology.",
   email: "syedraheelshah0318@gmail.com",
   phone: "+923110338480",
   links: {
@@ -13,6 +13,20 @@ export const INFO = {
 };
 
 export const EXP = [
+  {
+    title: "ADC Operations Officer",
+    company: "UBL - United Bank Limited",
+    date: "July 2026 - Present",
+    icon: "🏦",
+    logo: "/logos/ubl.jpg",
+    location: "Karachi, Sindh, Pakistan",
+    desc: [
+      "Manage daily Banking Operations for digital banking services and international card processing",
+      "Conduct real-time transaction monitoring and manage operational reporting to ensure high security and compliance",
+      "Drive workflow optimization for credit card operations and international card processing systems"
+    ],
+    skills: ["Banking Operations", "Credit Card Operations", "International Card Processing", "Microsoft Project"]
+  },
   {
     title: "Online Quran Teacher",
     company: "Hassaan Online Academy",
@@ -75,7 +89,8 @@ export const PROJ = [
   {
     title: "FinFlow (Balancify ERP)",
     desc: "A comprehensive multi-tenant Enterprise Resource Planning platform for SMEs, featuring financial accounting, inventory management, stakeholder tracking, and real-time executive dashboards.",
-    img: "/finflow-preview.png",
+    img: "/finflow-erp-finance-dashboard.webp",
+    alt: "FinFlow Balance ERP software dashboard featuring account summaries and net yield calculations",
     tags: ["React", "Express", "MongoDB", "Full Stack"],
     link: "https://finflow-3-xpyy.onrender.com/",
     github: "https://github.com/Raheelshah045/FinFlow"
@@ -83,7 +98,8 @@ export const PROJ = [
   {
     title: "JARVIS AI Voice Assistant",
     desc: "A futuristic AI-powered voice assistant featuring advanced speech recognition, natural language processing, and automated system controls for a sci-fi inspired user experience.",
-    img: "/jarvis-preview.png",
+    img: "/jarvis-ai-voice-assistant.webp",
+    alt: "JARVIS AI Voice Assistant interactive interface featuring advanced speech recognition and automated controls",
     tags: ["Python", "AI", "NLP", "Speech Recognition"],
     link: "https://github.com/Raheelshah045/Jarvis",
     github: "https://github.com/Raheelshah045/Jarvis"
@@ -91,7 +107,8 @@ export const PROJ = [
   {
     title: "Premium Logo Branding",
     desc: "A sophisticated logo identity for Almaas Online Quran Academy, combining traditional calligraphy with modern 3D metallic aesthetics and global symbolism.",
-    img: "/almaas-logo.png",
+    img: "/almaas-online-quran-academy-logo.webp",
+    alt: "Almaas Online Quran Academy premium gold and metallic brand logo identity design",
     tags: ["Logo Design", "Branding", "3D Mockup"],
     link: "https://github.com/Raheelshah045",
     github: "https://github.com/Raheelshah045"
@@ -99,7 +116,8 @@ export const PROJ = [
   {
     title: "Attendance Management System",
     desc: "A sophisticated full-stack attendance tracking solution featuring a real-time admin dashboard, student management, and comprehensive reporting tools.",
-    img: "/attendance-preview.png",
+    img: "/attendance-management-system-dashboard.webp",
+    alt: "Full-stack Attendance Management System real-time admin analytics dashboard",
     tags: ["Node.js", "Express", "Full Stack"],
     link: "https://www.linkedin.com/posts/hafiz-raheel-shah_fullstackdevelopment-nodejs-webdevelopment-activity-7421260706097954816-8v1_",
     github: "https://github.com/Raheelshah045/Attendance-management-system"
@@ -107,7 +125,8 @@ export const PROJ = [
   {
     title: "Almaas Online Quran Academy",
     desc: "A comprehensive, high-performance platform for Quranic education, featuring flexible scheduling, interactive courses, and a premium UI for students worldwide.",
-    img: "/almaas-preview.png",
+    img: "/almaas-online-quran-academy-portal.webp",
+    alt: "Almaas Online Quran Academy interactive web portal and student learning interface",
     tags: ["Full Stack"],
     link: "https://almaasonlinequranacademy.online/",
     github: "https://github.com/Raheelshah045/Academy-Website"
@@ -115,7 +134,8 @@ export const PROJ = [
   {
     title: "Brand & Publication Design",
     desc: "Professional book cover and brand identity design, specializing in modern layouts and conceptual visual storytelling for digital and print media.",
-    img: "/brand-preview.png",
+    img: "/branding-graphic-design-portfolio.webp",
+    alt: "Creative branding graphic design portfolio showing book cover and logo identity designs",
     tags: ["Photoshop", "Illustrator", "Branding"],
     link: "https://dribbble.com/shots/22698325-Book-Cover-Design?utm_source=Clipboard_Shot&utm_campaign=hafizraheel&utm_content=Book%20Cover%20Design&utm_medium=Social_Share",
     github: "https://github.com/Raheelshah045"
@@ -123,7 +143,8 @@ export const PROJ = [
   {
     title: "Cinematic Video Production",
     desc: "Expert video editing and motion graphics, creating engaging visual content with professional transitions, color grading, and storytelling.",
-    img: "/video-preview.png",
+    img: "/video-editing-motion-graphics-showcase.webp",
+    alt: "Cinematic video production and motion graphics editing timeline preview",
     tags: ["Premiere Pro", "After Effects", "Editing"],
     link: "https://youtu.be/MF8Vlu7qRvw?si=3sB3VQ_A0bZXsKxx",
     github: "https://github.com/Raheelshah045"
@@ -131,7 +152,8 @@ export const PROJ = [
   {
     title: "Ahmed Wood Art",
     desc: "A premium woodwork & bespoke furniture brand website for Karachi's leading carpentry studio — featuring custom kitchen cabinets, wardrobes, and interior design showcases with a luxurious Next.js UI.",
-    img: "/woodart-preview.png",
+    img: "/woodart-custom-furniture-website.webp",
+    alt: "Ahmed Wood Art premium bespoke woodwork furniture studio website showcase",
     tags: ["Next.js", "Web Design", "Frontend"],
     link: "https://ahmed-woodart.vercel.app/",
     github: "https://github.com/Raheelshah045/wood_website"
@@ -139,6 +161,7 @@ export const PROJ = [
 ];
 
 export const SKILLS = [
+  { cat: "Banking & Operations", icon: "Briefcase", items: ["Banking Operations", "Credit Card Operations", "International Card Processing", "Microsoft Project"] },
   { cat: "Teaching", icon: "BookOpen", items: ["Academic Tutoring", "Quranic Studies", "Tajweed", "Hifz", "Curriculum Design"] },
   { cat: "Software & Web Dev", icon: "Code", items: ["Java", "HTML5", "CSS3", "Design", "GitHub"] },
   { cat: "Design", icon: "Palette", items: ["Photoshop", "Illustrator", "InDesign"] },
@@ -151,8 +174,9 @@ export const EDU = [
     deg: "BS Computer Science",
     inst: "SZABIST University",
     location: "Karachi, Pakistan",
-    yr: "Ongoing",
+    yr: "2025 - Ongoing",
     icon: "🎓",
+    logo: "/logos/szabist.png",
     desc: "Currently pursuing Bachelor's degree in Computer Science, focusing on software development, programming fundamentals (Java, OOP), and modern computing technologies"
   },
   {
@@ -161,6 +185,7 @@ export const EDU = [
     location: "Korangi, Karachi",
     yr: "Completed",
     icon: "📿",
+    logo: "/logos/madrasa.png",
     desc: "Completed memorization of the Holy Quran with proper Tajweed and recitation techniques"
   },
   {
@@ -169,6 +194,7 @@ export const EDU = [
     location: "Shah Faisal, Karachi",
     yr: "Completed",
     icon: "🔬",
+    logo: "/logos/gssc.png",
     desc: "Intermediate education with focus on sciences - Board of Intermediate Education Karachi (BIEK)"
   },
   {
@@ -177,6 +203,7 @@ export const EDU = [
     location: "Karachi, Pakistan",
     yr: "Completed",
     icon: "📚",
+    logo: "/logos/tcf.png",
     desc: "Secondary education under Board of Secondary Education Karachi (BSEK)"
   }
 ];
