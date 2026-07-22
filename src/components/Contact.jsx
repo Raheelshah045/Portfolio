@@ -31,12 +31,6 @@ const FacebookLogo = () => (
   </svg>
 );
 
-const XLogo = () => (
-  <svg height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-  </svg>
-);
-
 const WhatsAppLogo = () => (
   <svg height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
@@ -51,97 +45,86 @@ const EmailLogo = () => (
 );
 
 export default function Contact() {
+  // Row 1: WhatsApp | GitHub | LinkedIn
+  // Row 2: Email | Instagram | Facebook
   const cards = [
-    {
-      platform: 'LinkedIn',
-      headerBg: '#EBEAE5',
-      logo: <LinkedInLogo />,
-      name: 'Raheel Jamal',
-      handle: '@hafiz-raheel-shah',
-      bio: "ADC Operations @UBL | SZABIST '29 | AI Automation | Web Developer | Graphic Designer | SEO Specialist | Educator",
-      institution: "UBL - United Bank Limited | SZABIST University",
-      link: INFO.links.linkedin,
-      btnText: 'View profile',
-      btnColor: '#0A66C2',
-      isLinkedInStyle: true
-    },
-    {
-      platform: 'GitHub',
-      headerBg: '#161B22',
-      logo: <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'white', fontWeight: 700, fontSize: '0.95rem' }}><GitHubLogo /> GitHub</div>,
-      name: 'Raheel Jamal',
-      handle: '@Raheelshah045',
-      bio: 'Full Stack Developer & CS Student @SZABIST | Building FinFlow ERP, JARVIS AI & Web Solutions',
-      institution: '20+ Repositories • Active Contributor',
-      link: INFO.links.github,
-      btnText: 'Follow on GitHub',
-      btnColor: '#0D1117',
-      isLinkedInStyle: false
-    },
-    {
-      platform: 'Instagram',
-      headerBg: 'linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #FD1D1D)',
-      logo: <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'white', fontWeight: 700, fontSize: '0.95rem' }}><InstagramLogo /> Instagram</div>,
-      name: 'Raheel Shah',
-      handle: '@raheel_shah315',
-      bio: "Syed 😇 | SZABIST @CS '29 💻 • 28 posts • 131 followers • 57 following",
-      institution: 'Personal & Creative Journey',
-      link: INFO.links.instagram,
-      btnText: 'Visit Instagram',
-      btnColor: '#E1306C',
-      isLinkedInStyle: false
-    },
-    {
-      platform: 'Facebook',
-      headerBg: '#1877F2',
-      logo: <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'white', fontWeight: 700, fontSize: '0.95rem' }}><FacebookLogo /> Facebook</div>,
-      name: 'Raheel Shah',
-      handle: '@raheel.shah.92123015',
-      bio: '3K friends • Lives in Karachi, Pakistan | UBL - United Bank Ltd | SZABIST',
-      institution: 'MOLDED BY LIFE, STYLED BY CHOICE 🎁🔥',
-      link: INFO.links.facebook,
-      btnText: 'Connect on Facebook',
-      btnColor: '#1877F2',
-      isLinkedInStyle: false
-    },
-    {
-      platform: 'X (Twitter)',
-      headerBg: '#000000',
-      logo: <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'white', fontWeight: 700, fontSize: '0.95rem' }}><XLogo /> X</div>,
-      name: 'Hafiz Raheel Shah',
-      handle: '@Raheelshah5588',
-      bio: '💫 Dreams is not that you see in the sleep, dream is that does not allow you to sleep 💫',
-      institution: 'Graphic Designer | Web Developer | Quran Educator',
-      link: 'https://x.com/Raheelshah5588',
-      btnText: 'Follow on X',
-      btnColor: '#000000',
-      isLinkedInStyle: false
-    },
     {
       platform: 'WhatsApp',
       headerBg: '#25D366',
       logo: <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'white', fontWeight: 700, fontSize: '0.95rem' }}><WhatsAppLogo /> WhatsApp</div>,
+      avatar: '/3.png',
       name: 'Raheel Jamal',
       handle: '+92 311 0338480',
       bio: 'Direct Message & Instant Banking / Web Project Consultation',
       institution: 'Available for freelance inquiries, web dev & tutoring',
       link: `https://wa.me/${INFO.phone.replace(/[^0-9]/g, '')}`,
       btnText: 'Chat on WhatsApp',
-      btnColor: '#059669',
-      isLinkedInStyle: false
+      btnColor: '#059669'
+    },
+    {
+      platform: 'GitHub',
+      headerBg: '#161B22',
+      logo: <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'white', fontWeight: 700, fontSize: '0.95rem' }}><GitHubLogo /> GitHub</div>,
+      avatar: '/4.png',
+      name: 'Raheel Jamal',
+      handle: '@Raheelshah045',
+      bio: 'Full Stack Developer & CS Student @SZABIST | Building FinFlow ERP, JARVIS AI & Web Solutions',
+      institution: '20+ Repositories • Active Contributor',
+      link: INFO.links.github,
+      btnText: 'Follow on GitHub',
+      btnColor: '#0D1117'
+    },
+    {
+      platform: 'LinkedIn',
+      headerBg: '#EBEAE5',
+      logo: <LinkedInLogo />,
+      avatar: '/3.png',
+      name: 'Raheel Jamal',
+      handle: '@hafiz-raheel-shah',
+      bio: "ADC Operations @UBL | SZABIST '29 | AI Automation | Web Developer | Graphic Designer | SEO Specialist | Educator",
+      institution: "UBL - United Bank Limited | SZABIST University",
+      link: INFO.links.linkedin,
+      btnText: 'View profile',
+      btnColor: '#0A66C2'
     },
     {
       platform: 'Email',
       headerBg: 'linear-gradient(135deg, #EA4335, #C5221F)',
       logo: <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'white', fontWeight: 700, fontSize: '0.95rem' }}><EmailLogo /> Email</div>,
+      avatar: '/2.jpg',
       name: 'Raheel Jamal',
       handle: INFO.email,
       bio: 'Official Professional Email Inquiry for job opportunities & business collaborations',
       institution: 'Guaranteed response within 24 hours',
       link: `mailto:${INFO.email}`,
       btnText: 'Send Email',
-      btnColor: '#EA4335',
-      isLinkedInStyle: false
+      btnColor: '#EA4335'
+    },
+    {
+      platform: 'Instagram',
+      headerBg: 'linear-gradient(135deg, #405DE6, #833AB4, #E1306C, #FD1D1D)',
+      logo: <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'white', fontWeight: 700, fontSize: '0.95rem' }}><InstagramLogo /> Instagram</div>,
+      avatar: '/1.jpg',
+      name: 'Raheel Shah',
+      handle: '@raheel_shah315',
+      bio: "Syed 😇 | SZABIST @CS '29 💻 • 28 posts • 131 followers • 57 following",
+      institution: 'Personal & Creative Journey',
+      link: INFO.links.instagram,
+      btnText: 'Visit Instagram',
+      btnColor: '#E1306C'
+    },
+    {
+      platform: 'Facebook',
+      headerBg: '#1877F2',
+      logo: <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'white', fontWeight: 700, fontSize: '0.95rem' }}><FacebookLogo /> Facebook</div>,
+      avatar: '/1.jpg',
+      name: 'Raheel Shah',
+      handle: '@raheel.shah.92123015',
+      bio: '3K friends • Lives in Karachi, Pakistan | UBL - United Bank Ltd | SZABIST',
+      institution: 'MOLDED BY LIFE, STYLED BY CHOICE 🎁🔥',
+      link: INFO.links.facebook,
+      btnText: 'Connect on Facebook',
+      btnColor: '#1877F2'
     }
   ];
 
@@ -203,7 +186,7 @@ export default function Contact() {
               {/* Avatar Photo (Overlapping Header) */}
               <div style={{ padding: '0 1.25rem', marginTop: '-2.25rem', marginBottom: '0.75rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                 <img
-                  src="/profile.jpg"
+                  src={card.avatar}
                   alt={card.name}
                   style={{
                     width: '4.75rem',
