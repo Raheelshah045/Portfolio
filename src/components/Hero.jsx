@@ -20,20 +20,6 @@ export default function Hero() {
     return () => clearTimeout(timer);
   }, [charIdx, del, roleIdx]);
 
-  useEffect(() => {
-    // Dynamically load LinkedIn badge script after page content loads
-    const script = document.createElement('script');
-    script.src = 'https://platform.linkedin.com/badges/js/profile.js';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
-
   const btnHover = (e) => e.currentTarget.style.transform = 'translateY(-5px)';
   const btnLeave = (e) => e.currentTarget.style.transform = 'translateY(0)';
 
@@ -80,37 +66,6 @@ export default function Hero() {
             onMouseEnter={btnHover} onMouseLeave={btnLeave}>
             <MessageCircle size={24} /> WhatsApp
           </a>
-        </div>
-
-        {/* LinkedIn Profile Badge */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-          <div
-            className="badge-base LI-profile-badge"
-            data-locale="en_US"
-            data-size="medium"
-            data-theme="light"
-            data-type="VERTICAL"
-            data-vanity="hafiz-raheel-shah"
-            data-version="v1"
-            style={{
-              borderRadius: '1rem',
-              overflow: 'hidden',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-              border: '1px solid #E2E8F0',
-              maxWidth: '100%'
-            }}
-          >
-            <a
-              className="badge-base__link LI-simple-link"
-              href="https://www.linkedin.com/in/hafiz-raheel-shah?trk=profile-badge"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View Raheel Jamal's LinkedIn profile"
-              style={{ display: 'none' }}
-            >
-              Raheel Jamal
-            </a>
-          </div>
         </div>
       </motion.div>
     </section>
