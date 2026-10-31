@@ -1,7 +1,7 @@
 export const INFO = {
   name: "Raheel Jamal",
-  roles: ["ADC Operations Officer", "Web Developer", "Academic & Islamic Studies Educator", "Graphic Designer", "SEO Specialist"],
-  bio: "I am Raheel Jamal, an ADC Operations Officer at UBL and a passionate developer/educator currently pursuing BS Computer Science while bridging the gap between digital banking operations, education, and technology.",
+  roles: ["Software Developer", "Automation Engineer", "AI Integration", "Educator"],
+  bio: "I build software, workflow automation, and practical AI-powered solutions while pursuing a BS in Computer Science.",
   email: "syedraheelshah0318@gmail.com",
   phone: "+923110338480",
   links: {
@@ -15,44 +15,54 @@ export const INFO = {
 export const EXP = [
   {
     title: "ADC Operations Officer",
-    company: "UBL - United Bank Limited",
-    date: "July 2026 - Present",
+    company: "United Bank Limited (UBL)",
+    date: "Jul 2026 - Present",
     icon: "🏦",
     logo: "/logos/ubl.jpg",
     location: "Karachi, Sindh, Pakistan",
     desc: [
-      "Manage daily Banking Operations for digital banking services and international card processing",
-      "Conduct real-time transaction monitoring and manage operational reporting to ensure high security and compliance",
-      "Drive workflow optimization for credit card operations and international card processing systems"
+      "Supporting Alternate Delivery Channels (ADC) and card operations to ensure smooth banking services.",
+      "Assisting in User Acceptance Testing (UAT), Change Requests (CR), and Business Requirement Documentation (BRD) for system enhancements.",
+      "Monitoring operational processes, resolving transaction-related issues, and coordinating with cross-functional teams."
     ],
-    skills: ["Banking Operations", "Credit Card Operations", "International Card Processing", "Microsoft Project"]
+    skills: ["ADC Operations", "Card Operations", "UAT", "Change Requests", "BRD"]
   },
   {
     title: "Online Quran Teacher",
     company: "Hassaan Online Academy",
-    date: "Nov 2025 - Present",
+    date: "Nov 2025 - Jul 2026",
     icon: "📚",
     logo: "/logos/hassaan-academy.png",
-    location: "Karachi, Pakistan",
+    location: "Online",
     desc: [
-      "Mentored international students in Quranic recitation with a focus on advanced Tajweed and pronunciation rules",
-      "Developed and implemented personalized lesson plans and curricula for over 50+ active students across different age groups",
-      "Consistently achieved a 98% student satisfaction rate through engaging, patient, and results-oriented teaching methods",
-      "Utilized digital tools and platforms to provide interactive and immersive learning experiences for remote students"
+      "Teaching Quran (Nazira, Tajweed, Hifz) and Islamic Studies online.",
+      "Conducting structured and interactive sessions for students with different learning levels."
     ]
   },
   {
-    title: "Tutor & Quranic Educator",
+    title: "SEO Specialist",
+    company: "Freelance Projects",
+    date: "2023 - Present",
+    icon: "📈",
+    logo: "/logos/seo.png",
+    location: "Remote",
+    desc: [
+      "Executed keyword research and on-page and technical SEO to improve search visibility.",
+      "Optimized website structure, content, and performance.",
+      "Managed competitor analysis and off-page SEO activities to strengthen organic visibility."
+    ],
+    skills: ["SEO", "Keyword Research", "Technical SEO", "Content Optimization"]
+  },
+  {
+    title: "Tutor",
     company: "QTV Tutor",
     date: "May 2025 - Oct 2025",
     icon: "🎓",
     logo: "/logos/qtv-tutor.png",
-    location: "Karachi, Pakistan",
+    location: "Online",
     desc: [
-      "Conducted interactive, one-on-one Quranic sessions designed to foster deep understanding and spiritual connection",
-      "Created original, engaging educational content and multimedia resources tailored for diverse age groups and skill levels",
-      "Maintained exceptionally high student retention rates by building strong rapport and consistently meeting learning objectives",
-      "Provided regular feedback and progress reports to students and parents to ensure transparent communication"
+      "Teaching Quran (Nazira, Tajweed, Hifz) and Islamic Studies online.",
+      "Conducting interactive sessions for international and local students."
     ]
   },
   {
@@ -61,31 +71,68 @@ export const EXP = [
     date: "Sep 2024 - May 2025",
     icon: "📖",
     logo: "/logos/hassaan-academy.png",
-    location: "Karachi, Pakistan",
+    location: "Online",
     desc: [
-      "Delivered structured and comprehensive Quranic courses, covering basic reading to advanced memorization",
-      "Architected personalized learning paths for students, allowing them to progress at their own pace while maintaining quality",
-      "Consistently maintained high satisfaction ratings from both students and the academy administration",
-      "Collaborated with the administrative team to refine teaching methodologies and improve student outcomes"
+      "Taught Quran from foundational to advanced levels, including Nazira, Tajweed, and Hifz.",
+      "Delivered online Islamic Studies lessons through structured and engaging sessions."
     ]
   },
   {
-    title: "Private Teacher",
-    company: "Home Tuition",
-    date: "Jan 2020 - Apr 2025",
+    title: "Teacher",
+    company: "Private Home Tuition",
+    date: "Jan 2020 - May 2026",
     icon: "🏠",
     logo: "/logos/home-tuition.png",
     location: "Karachi, Pakistan",
     desc: [
-      "Provided personalized home-based academic support for students from Grade 1 through Matriculation in various subjects",
-      "Specialized in intensive Quranic studies and Islamic education, helping students master fundamental religious concepts",
-      "Expertly adapted teaching styles and materials to suit individual learning needs and overcome specific educational challenges",
-      "Fostered a positive and motivating learning environment that encouraged academic growth and personal development"
+      "Taught Quran (Nazira, Tajweed, Hifz) to students at different learning levels.",
+      "Provided Islamic guidance and personalized support according to students' learning needs."
     ]
+  },
+  {
+    title: "Graphic Designer",
+    company: "Freelance Projects (Part-time)",
+    date: "Part-time",
+    icon: "🎨",
+    logo: "/logos/design.png",
+    location: "Remote",
+    desc: [
+      "Designed virtual backgrounds, logos, marketing materials, and business cards, and performed photo editing.",
+      "Continued taking on varied design projects after completing formal graphic design education."
+    ],
+    skills: ["Graphic Design", "Branding", "Photo Editing", "Marketing Materials"]
   }
 ];
 
 export const PROJ = [
+  {
+    title: "Taskly — Smart Task Planner",
+    desc: "A task-planning Progressive Web App built with React, TypeScript, Vite, and Supabase. Organizes work through Inbox, Today, Upcoming, and Completed views, with task priorities, due dates, search, and a responsive app experience.",
+    img: "/taskly-project.webp",
+    alt: "Taskly task planner application showcase",
+    tags: ["React", "TypeScript", "Vite", "Supabase", "PWA"],
+    link: "https://taskly-261.pages.dev/",
+    github: "https://github.com/Raheelshah045/Taskly"
+  },
+  {
+    title: "System Architecture Designer",
+    desc: "An interactive system architecture design and logic-simulation workspace. Create, place, connect, and configure components, explore layered architecture in 3D, simulate event flows and failures, and export editable projects.",
+    img: "/system-architecture-designer.webp",
+    alt: "System Architecture Designer interactive architecture canvas",
+    tags: ["JavaScript", "React", "Vite", "Simulation", "3D"],
+    link: "https://github.com/Raheelshah045/System-Architecture-Designer",
+    github: "https://github.com/Raheelshah045/System-Architecture-Designer"
+  },
+  {
+    title: "Banking Operations Dashboard",
+    desc: "A confidential banking operations dashboard concept focused on operational visibility, structured reporting, and workflow monitoring. Project details and source code are confidential and cannot be publicly shared.",
+    img: "/banking-operations-dashboard.webp",
+    alt: "Illustrative banking operations dashboard interface with anonymized sample data",
+    tags: ["Dashboard", "Operations", "Data Visualization", "Confidential"],
+    link: null,
+    github: null,
+    confidential: true
+  },
   {
     title: "FinFlow (Balancify ERP)",
     desc: "A comprehensive multi-tenant Enterprise Resource Planning platform for SMEs, featuring financial accounting, inventory management, stakeholder tracking, and real-time executive dashboards.",
@@ -97,63 +144,36 @@ export const PROJ = [
   },
   {
     title: "JARVIS AI Voice Assistant",
-    desc: "A futuristic AI-powered voice assistant featuring advanced speech recognition, natural language processing, and automated system controls for a sci-fi inspired user experience.",
+    desc: "A Python-based AI voice assistant exploring speech recognition, natural language processing, and desktop automation.",
     img: "/jarvis-ai-voice-assistant.webp",
-    alt: "JARVIS AI Voice Assistant interactive interface featuring advanced speech recognition and automated controls",
+    alt: "JARVIS AI Voice Assistant interface",
     tags: ["Python", "AI", "NLP", "Speech Recognition"],
     link: "https://github.com/Raheelshah045/Jarvis",
     github: "https://github.com/Raheelshah045/Jarvis"
   },
   {
-    title: "Premium Logo Branding",
-    desc: "A sophisticated logo identity for Almaas Online Quran Academy, combining traditional calligraphy with modern 3D metallic aesthetics and global symbolism.",
-    img: "/almaas-online-quran-academy-logo.webp",
-    alt: "Almaas Online Quran Academy premium gold and metallic brand logo identity design",
-    tags: ["Logo Design", "Branding", "3D Mockup"],
-    link: "https://github.com/Raheelshah045",
-    github: "https://github.com/Raheelshah045"
-  },
-  {
     title: "Attendance Management System",
-    desc: "A sophisticated full-stack attendance tracking solution featuring a real-time admin dashboard, student management, and comprehensive reporting tools.",
+    desc: "A full-stack attendance tracking solution featuring an admin dashboard, student management, and reporting tools.",
     img: "/attendance-management-system-dashboard.webp",
-    alt: "Full-stack Attendance Management System real-time admin analytics dashboard",
+    alt: "Attendance Management System dashboard",
     tags: ["Node.js", "Express", "Full Stack"],
     link: "https://www.linkedin.com/posts/hafiz-raheel-shah_fullstackdevelopment-nodejs-webdevelopment-activity-7421260706097954816-8v1_",
     github: "https://github.com/Raheelshah045/Attendance-management-system"
   },
   {
     title: "Almaas Online Quran Academy",
-    desc: "A comprehensive, high-performance platform for Quranic education, featuring flexible scheduling, interactive courses, and a premium UI for students worldwide.",
+    desc: "A web platform for Quranic education, featuring online learning resources and a student-focused interface.",
     img: "/almaas-online-quran-academy-portal.webp",
-    alt: "Almaas Online Quran Academy interactive web portal and student learning interface",
-    tags: ["Full Stack"],
+    alt: "Almaas Online Quran Academy web portal",
+    tags: ["Full Stack", "Web Development"],
     link: "https://almaasonlinequranacademy.online/",
     github: "https://github.com/Raheelshah045/Academy-Website"
   },
   {
-    title: "Brand & Publication Design",
-    desc: "Professional book cover and brand identity design, specializing in modern layouts and conceptual visual storytelling for digital and print media.",
-    img: "/branding-graphic-design-portfolio.webp",
-    alt: "Creative branding graphic design portfolio showing book cover and logo identity designs",
-    tags: ["Photoshop", "Illustrator", "Branding"],
-    link: "https://dribbble.com/shots/22698325-Book-Cover-Design?utm_source=Clipboard_Shot&utm_campaign=hafizraheel&utm_content=Book%20Cover%20Design&utm_medium=Social_Share",
-    github: "https://github.com/Raheelshah045"
-  },
-  {
-    title: "Cinematic Video Production",
-    desc: "Expert video editing and motion graphics, creating engaging visual content with professional transitions, color grading, and storytelling.",
-    img: "/video-editing-motion-graphics-showcase.webp",
-    alt: "Cinematic video production and motion graphics editing timeline preview",
-    tags: ["Premiere Pro", "After Effects", "Editing"],
-    link: "https://youtu.be/MF8Vlu7qRvw?si=3sB3VQ_A0bZXsKxx",
-    github: "https://github.com/Raheelshah045"
-  },
-  {
     title: "Ahmed Wood Art",
-    desc: "A premium woodwork & bespoke furniture brand website for Karachi's leading carpentry studio — featuring custom kitchen cabinets, wardrobes, and interior design showcases with a luxurious Next.js UI.",
+    desc: "A premium woodwork and bespoke furniture brand website showcasing custom furniture and interior design services.",
     img: "/woodart-custom-furniture-website.webp",
-    alt: "Ahmed Wood Art premium bespoke woodwork furniture studio website showcase",
+    alt: "Ahmed Wood Art website showcase",
     tags: ["Next.js", "Web Design", "Frontend"],
     link: "https://ahmed-woodart.vercel.app/",
     github: "https://github.com/Raheelshah045/wood_website"
@@ -161,12 +181,13 @@ export const PROJ = [
 ];
 
 export const SKILLS = [
-  { cat: "Banking & Operations", icon: "Briefcase", items: ["Banking Operations", "Credit Card Operations", "International Card Processing", "Microsoft Project"] },
-  { cat: "Teaching", icon: "BookOpen", items: ["Academic Tutoring", "Quranic Studies", "Tajweed", "Hifz", "Curriculum Design"] },
-  { cat: "Software & Web Dev", icon: "Code", items: ["Java", "HTML5", "CSS3", "Design", "GitHub"] },
-  { cat: "Design", icon: "Palette", items: ["Photoshop", "Illustrator", "InDesign"] },
-  { cat: "Marketing", icon: "TrendingUp", items: ["SEO", "Content", "Social Media"] },
-  { cat: "Video", icon: "Star", items: ["Premiere Pro", "Filmora", "Editing"] }
+  { cat: "Banking & Operations", icon: "Briefcase", items: ["ADC Operations", "Card Operations", "UAT", "Change Requests", "BRD"] },
+  { cat: "Software & Web Dev", icon: "Code", items: ["Java", "JavaScript", "React", "TypeScript", "HTML5", "CSS3", "GitHub"] },
+  { cat: "Automation & AI", icon: "Cpu", items: ["Python", "Playwright", "Workflow Automation", "AI Integration"] },
+  { cat: "Teaching", icon: "BookOpen", items: ["Academic Tutoring", "Quranic Studies", "Tajweed", "Hifz"] },
+  { cat: "Design", icon: "Palette", items: ["Photoshop", "Illustrator", "Graphic Design"] },
+  { cat: "Marketing", icon: "TrendingUp", items: ["SEO", "Keyword Research", "Technical SEO"] },
+  { cat: "Video", icon: "Star", items: ["Premiere Pro", "Filmora", "Video Editing"] }
 ];
 
 export const EDU = [
@@ -177,7 +198,7 @@ export const EDU = [
     yr: "2025 - Ongoing",
     icon: "🎓",
     logo: "/logos/szabist.png",
-    desc: "Currently pursuing Bachelor's degree in Computer Science, focusing on software development, programming fundamentals (Java, OOP), and modern computing technologies"
+    desc: "Currently pursuing a Bachelor's degree in Computer Science, focusing on software development, programming fundamentals, and modern computing technologies."
   },
   {
     deg: "Hifz-ul-Quran",
@@ -186,7 +207,7 @@ export const EDU = [
     yr: "Completed",
     icon: "📿",
     logo: "/logos/madrasa.png",
-    desc: "Completed memorization of the Holy Quran with proper Tajweed and recitation techniques"
+    desc: "Completed memorization of the Holy Quran with proper Tajweed and recitation techniques."
   },
   {
     deg: "FSC Pre-Medical",
@@ -195,7 +216,7 @@ export const EDU = [
     yr: "Completed",
     icon: "🔬",
     logo: "/logos/gssc.png",
-    desc: "Intermediate education with focus on sciences - Board of Intermediate Education Karachi (BIEK)"
+    desc: "Intermediate education with focus on sciences - Board of Intermediate Education Karachi (BIEK)."
   },
   {
     deg: "Matriculation (Science)",
@@ -204,6 +225,6 @@ export const EDU = [
     yr: "Completed",
     icon: "📚",
     logo: "/logos/tcf.png",
-    desc: "Secondary education under Board of Secondary Education Karachi (BSEK)"
+    desc: "Secondary education under Board of Secondary Education Karachi (BSEK)."
   }
 ];
