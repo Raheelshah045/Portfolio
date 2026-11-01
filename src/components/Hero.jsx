@@ -195,6 +195,8 @@ export default function Hero({ onOpenContact }) {
           preload="auto"
           className="hero-video-element"
         />
+        {/* Seamless desktop blending overlay — smoothly dissolves video into the dark studio backdrop */}
+        <div className="hero-desktop-gradient-overlay" aria-hidden="true" />
         {/* Subtle mobile gradient overlay for pristine typography contrast without obscuring character */}
         <div className="hero-mobile-gradient-overlay" aria-hidden="true" />
       </div>

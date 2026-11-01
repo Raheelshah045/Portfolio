@@ -306,7 +306,7 @@ body {
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-color: #0A0E17;
+  background-color: #04080F;
   padding-top: 5.5rem;
   padding-bottom: 4rem;
 }
@@ -324,44 +324,60 @@ body {
   z-index: 3;
 }
 
-/* Hero Video Stage Anchor: Right-side full-body character positioning */
+/* Hero Video Stage Anchor: Spans the full hero width with zero clipping */
 .hero-video-stage-anchor {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 58%;
+  inset: 0;
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-end;
   z-index: 2;
   cursor: pointer;
   overflow: hidden;
+  pointer-events: none;
+}
+
+/* Desktop smooth directional blending overlay — eliminates any video boundary/seam */
+.hero-desktop-gradient-overlay {
+  display: block;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(
+    to right,
+    #04080F 0%,
+    #04080F 35%,
+    rgba(4, 8, 15, 0.78) 50%,
+    rgba(4, 8, 15, 0.15) 68%,
+    transparent 82%
+  );
 }
 
 /* Unified video player with hardware-accelerated seamless edge dissolution */
 .hero-video-element {
-  height: 94%;
-  max-height: 94vh;
+  position: relative;
+  height: 95%;
+  max-height: 95vh;
   width: auto;
   object-fit: contain;
   object-position: center bottom;
+  margin-right: -18vw;
   display: block;
   pointer-events: auto;
   user-select: none;
   -webkit-user-select: none;
 
-  /* Dissolves all 4 rectangular video edges directly into alpha transparency */
-  -webkit-mask-image: radial-gradient(ellipse 70% 75% at 50% 50%, black 50%, transparent 95%),
-                      linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%),
-                      linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
-  mask-image: radial-gradient(ellipse 70% 75% at 50% 50%, black 50%, transparent 95%),
-              linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%),
-              linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+  /* Dissolves the left edge and perimeters directly into alpha transparency */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 15%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.8) 50%, black 65%, black 100%),
+                      linear-gradient(to top, transparent 0%, black 5%, black 95%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, transparent 15%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.8) 50%, black 65%, black 100%),
+              linear-gradient(to top, transparent 0%, black 5%, black 95%, transparent 100%);
 }
 
-/* Ambient Subtle Stage Lighting (Extends video floor naturally) */
+/* Ambient Subtle Stage Lighting (Extends video floor & cyan atmosphere naturally) */
 .hero-ambient-spotlight {
   position: absolute;
   right: 12%;
@@ -369,7 +385,7 @@ body {
   width: 45vw;
   height: 60vh;
   border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(154, 91, 50, 0.08) 0%, rgba(24, 24, 27, 0.03) 45%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.05) 0%, rgba(14, 165, 233, 0.02) 40%, transparent 70%);
   pointer-events: none;
 }
 
@@ -420,6 +436,10 @@ body {
   .hero-stage-container::after {
     height: 38px;
     background: linear-gradient(to bottom, transparent 0%, var(--bg-primary) 100%);
+  }
+
+  .hero-desktop-gradient-overlay {
+    display: none !important;
   }
 
   .hero-video-stage-anchor {
