@@ -1,20 +1,26 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, MessageCircle, Layers, Mail } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, MessageCircle, Layers, Mail, Play, RotateCcw } from 'lucide-react';
 import { INFO } from '../data/info';
 
 /**
  * Hero Component (Seamless Video Stage & Right-Anchored Full-Body Composition)
  * ==============================================================================
  * Hosts the authentic 'Raheel_Intro.mp4' video directly inside the Hero Section.
- * Plays inline muted on mount, pauses silently on click, resumes from exact position,
- * pauses when scrolled out of view, and stops cleanly at its final frame.
+ * Remains paused on initial load with an elegant, compact "Watch Intro · Sound On"
+ * glass pill indicator. Audio-enabled playback is initiated directly via user interaction.
+ * Pauses when scrolled out of view and resumes from exact timestamp if active.
  * Positioned on the right side with complete head-to-shoe visibility.
  */
 export default function Hero({ onOpenContact }) {
   const heroRef = useRef(null);
   const videoRef = useRef(null);
-  const wasPlayingRef = useRef(true);
+  const wasPlayingRef = useRef(false);
+  const hasUserStartedRef = useRef(false);
+
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
+  const [isEnded, setIsEnded] = useState(false);
 
   const roles = useMemo(() => [
     'Software Developer',
@@ -28,7 +34,7 @@ export default function Hero({ onOpenContact }) {
   const [charIdx, setCharIdx] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  // Typewriter Animation
+  // Typewriter Animation (Strictly preserved in sequence, timing and behavior)
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setCharIdx(roles[roleIdx].length);
@@ -54,76 +60,27 @@ export default function Hero({ onOpenContact }) {
     return () => clearTimeout(timer);
   }, [charIdx, isDeleting, roleIdx, roles]);
 
-  // Video Autoplay & Viewport Intersection Monitoring
+  // Viewport Intersection Monitoring (Never autoplays on mount; pauses when scrolled away,
+  // and only resumes if user intentionally started playback)
   useEffect(() => {
-    const video = videoRef.current;
     const hero = heroRef.current;
-    if (!video || !hero) return;
+    if (!hero) return;
 
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
-      video.pause();
-      return;
-    }
-
-    let removeListeners = null;
-
-    // Helper to silently unmute on first genuine user interaction outside the video
-    const setupInteractionUnmute = () => {
-      const unlockAudio = () => {
-        if (videoRef.current) {
-          videoRef.current.muted = false;
-          if (videoRef.current.paused && wasPlayingRef.current) {
-            videoRef.current.play().catch(() => {});
-          }
-        }
-        cleanup();
-      };
-
-      const cleanup = () => {
-        window.removeEventListener('pointerdown', unlockAudio, true);
-        window.removeEventListener('keydown', unlockAudio, true);
-        window.removeEventListener('scroll', unlockAudio, true);
-        window.removeEventListener('touchstart', unlockAudio, true);
-      };
-
-      window.addEventListener('pointerdown', unlockAudio, { once: true, capture: true });
-      window.addEventListener('keydown', unlockAudio, { once: true, capture: true });
-      window.addEventListener('scroll', unlockAudio, { once: true, capture: true });
-      window.addEventListener('touchstart', unlockAudio, { once: true, capture: true });
-
-      removeListeners = cleanup;
-    };
-
-    // Attempt unmuted playback first
-    video.muted = false;
-    video.play().then(() => {
-      wasPlayingRef.current = true;
-    }).catch(() => {
-      // Browser blocked unmuted autoplay: fall back to muted playback immediately
-      video.muted = true;
-      video.play().then(() => {
-        wasPlayingRef.current = true;
-      }).catch(() => {
-        wasPlayingRef.current = false;
-      });
-      // Register silent interaction listener to unlock audio on first user gesture
-      setupInteractionUnmute();
-    });
-
-    // Pause when scrolling away, resume from exact timestamp when returning
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (!videoRef.current) return;
+          const video = videoRef.current;
+          if (!video) return;
+
           if (!entry.isIntersecting) {
-            if (!videoRef.current.paused && !videoRef.current.ended) {
+            if (!video.paused && !video.ended) {
               wasPlayingRef.current = true;
-              videoRef.current.pause();
+              video.pause();
             }
           } else {
-            if (wasPlayingRef.current && !videoRef.current.ended) {
-              videoRef.current.play().catch(() => {});
+            // Only auto-resume if the user explicitly clicked to play previously!
+            if (wasPlayingRef.current && hasUserStartedRef.current && !video.ended) {
+              video.play().catch(() => {});
             }
           }
         });
@@ -133,26 +90,49 @@ export default function Hero({ onOpenContact }) {
 
     observer.observe(hero);
 
-    return () => {
-      observer.disconnect();
-      if (removeListeners) removeListeners();
-    };
+    return () => observer.disconnect();
   }, []);
 
-  // Silent toggle on click: pause if playing, resume from exact timestamp if paused
-  const handleVideoAreaClick = (e) => {
-    e.stopPropagation();
+  // Direct User Interaction Playback Trigger (Unmuted audio initiated inside click event)
+  const handlePlayToggle = (e) => {
+    if (e) {
+      e.stopPropagation();
+    }
     const video = videoRef.current;
     if (!video) return;
 
     if (video.paused) {
+      // Direct user gesture allows unmuted audio playback per browser security policy
       video.muted = false;
-      video.play().then(() => {
-        wasPlayingRef.current = true;
-      }).catch(() => {});
+      video.volume = 1.0;
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+            setIsEnded(false);
+            setHasStarted(true);
+            hasUserStartedRef.current = true;
+            wasPlayingRef.current = true;
+          })
+          .catch((err) => {
+            console.warn('Direct unmuted playback blocked, falling back to muted:', err);
+            video.muted = true;
+            video.play()
+              .then(() => {
+                setIsPlaying(true);
+                setIsEnded(false);
+                setHasStarted(true);
+                hasUserStartedRef.current = true;
+                wasPlayingRef.current = true;
+              })
+              .catch(() => {});
+          });
+      }
     } else {
-      wasPlayingRef.current = false;
       video.pause();
+      setIsPlaying(false);
+      wasPlayingRef.current = false;
     }
   };
 
@@ -171,35 +151,83 @@ export default function Hero({ onOpenContact }) {
         - Occupies the right side of the Hero section.
         - Raheel stands naturally in full-body view (head near top, shoes near bottom).
         - Edge mask dissolves all perimeter edges seamlessly into the background.
-        - Clicking anywhere on the video area toggles pause/resume silently with zero visual feedback.
+        - Clicking anywhere on the video area toggles play/pause with audio.
       */}
       <div
         className="hero-video-stage-anchor"
-        onClick={handleVideoAreaClick}
-        aria-label="Toggle video playback"
+        onClick={handlePlayToggle}
+        aria-label={isPlaying ? "Pause video introduction" : "Play video introduction with sound"}
         role="button"
         tabIndex={0}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            handleVideoAreaClick(e);
+            handlePlayToggle(e);
           }
         }}
       >
         <video
           ref={videoRef}
           src="/Raheel_Intro.mp4"
-          autoPlay
+          poster="/intro_poster.jpg"
           playsInline
           loop={false}
-          preload="auto"
+          preload="metadata"
           className="hero-video-element"
+          onPlay={() => {
+            setIsPlaying(true);
+            setIsEnded(false);
+            setHasStarted(true);
+          }}
+          onPause={() => setIsPlaying(false)}
+          onEnded={() => {
+            setIsPlaying(false);
+            setIsEnded(true);
+            wasPlayingRef.current = false;
+          }}
         />
         {/* Seamless desktop blending overlay — smoothly dissolves video into the dark studio backdrop */}
         <div className="hero-desktop-gradient-overlay" aria-hidden="true" />
         {/* Subtle mobile gradient overlay for pristine typography contrast without obscuring character */}
         <div className="hero-mobile-gradient-overlay" aria-hidden="true" />
       </div>
+
+      {/* Subtle, attractive Glass-Style Play Pill Indicator */}
+      <button
+        type="button"
+        onClick={handlePlayToggle}
+        className="hero-video-pill"
+        aria-label={
+          isPlaying
+            ? "Pause introduction video"
+            : isEnded
+            ? "Replay introduction video with sound"
+            : hasStarted
+            ? "Resume introduction video with sound"
+            : "Watch introduction video with sound"
+        }
+      >
+        {isPlaying ? (
+          <span className="hero-sound-wave" aria-hidden="true">
+            <span className="hero-sound-wave-bar" />
+            <span className="hero-sound-wave-bar" />
+            <span className="hero-sound-wave-bar" />
+          </span>
+        ) : isEnded ? (
+          <RotateCcw size={13} aria-hidden="true" />
+        ) : (
+          <Play size={13} fill="currentColor" aria-hidden="true" />
+        )}
+        <span>
+          {isPlaying
+            ? "Intro Playing · Pause"
+            : isEnded
+            ? "Replay Intro · Sound On"
+            : hasStarted
+            ? "Resume Intro · Sound On"
+            : "Watch Intro · Sound On"}
+        </span>
+      </button>
 
       {/* Left Content Area */}
       <div className="container-max hero-content-area" style={{ position: 'relative', zIndex: 5, width: '100%' }}>

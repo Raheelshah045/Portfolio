@@ -78,6 +78,8 @@ export default function About() {
                 <img
                   src="/raheel_portrait_executive_enhanced.png"
                   alt="Raheel Jamal - Professional Executive Portrait"
+                  width="580"
+                  height="824"
                   loading="lazy"
                   style={{
                     width: '100%',

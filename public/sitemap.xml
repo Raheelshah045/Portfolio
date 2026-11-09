@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://raheeljamal.vercel.app/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://raheeljamal.vercel.app/raheel_portrait_executive_enhanced.png</image:loc>
+      <image:title>Raheel Jamal - Professional Executive Portrait</image:title>
+      <image:caption>Raheel Jamal, Solution Architect and Full-Stack Developer</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://raheeljamal.vercel.app/intro_poster.jpg</video:thumbnail_loc>
+      <video:title>Raheel Jamal Personal Introduction</video:title>
+      <video:description>Personal introduction video by Raheel Jamal covering software architecture, automation engineering, and full-stack development experience.</video:description>
+      <video:content_loc>https://raheeljamal.vercel.app/Raheel_Intro.mp4</video:content_loc>
+      <video:player_loc>https://raheeljamal.vercel.app/</video:player_loc>
+      <video:duration>10</video:duration>
+      <video:publication_date>2026-11-01T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://raheeljamal.vercel.app/">Raheel Jamal</video:uploader>
+    </video:video>
+  </url>
+</urlset>
