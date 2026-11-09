@@ -21,6 +21,7 @@ export default function Hero({ onOpenContact }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
   const [isEnded, setIsEnded] = useState(false);
+  const [playError, setPlayError] = useState(false);
 
   const roles = useMemo(() => [
     'Software Developer',
@@ -111,22 +112,19 @@ export default function Hero({ onOpenContact }) {
           .then(() => {
             setIsPlaying(true);
             setIsEnded(false);
+            setPlayError(false);
             setHasStarted(true);
             hasUserStartedRef.current = true;
             wasPlayingRef.current = true;
           })
           .catch((err) => {
-            console.warn('Direct unmuted playback blocked, falling back to muted:', err);
-            video.muted = true;
-            video.play()
-              .then(() => {
-                setIsPlaying(true);
-                setIsEnded(false);
-                setHasStarted(true);
-                hasUserStartedRef.current = true;
-                wasPlayingRef.current = true;
-              })
-              .catch(() => {});
+            // Strictly reject muted fallback: keep paused, keep audio unmuted, report error, allow retry
+            console.error('Sound-enabled video playback failed:', err);
+            video.pause();
+            video.muted = false;
+            setIsPlaying(false);
+            setPlayError(true);
+            wasPlayingRef.current = false;
           });
       }
     } else {
@@ -202,6 +200,8 @@ export default function Hero({ onOpenContact }) {
             ? "Pause introduction video"
             : isEnded
             ? "Replay introduction video with sound"
+            : playError
+            ? "Playback failed. Tap to retry with sound"
             : hasStarted
             ? "Resume introduction video with sound"
             : "Watch introduction video with sound"
@@ -213,7 +213,7 @@ export default function Hero({ onOpenContact }) {
             <span className="hero-sound-wave-bar" />
             <span className="hero-sound-wave-bar" />
           </span>
-        ) : isEnded ? (
+        ) : isEnded || playError ? (
           <RotateCcw size={13} aria-hidden="true" />
         ) : (
           <Play size={13} fill="currentColor" aria-hidden="true" />
@@ -223,6 +223,8 @@ export default function Hero({ onOpenContact }) {
             ? "Intro Playing · Pause"
             : isEnded
             ? "Replay Intro · Sound On"
+            : playError
+            ? "Tap to Retry · Sound On"
             : hasStarted
             ? "Resume Intro · Sound On"
             : "Watch Intro · Sound On"}
