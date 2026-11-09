@@ -16,7 +16,7 @@ export const INFO = {
   status: "Online // Building & Optimizing Systems",
   links: {
     github: "https://github.com/Raheelshah045",
-    linkedin: "https://www.linkedin.com/in/hafiz-raheel-shah",
+    linkedin: "https://www.linkedin.com/in/Raheel-Jamal-dev/",
     whatsapp: "https://wa.me/923110338480",
     facebook: "https://web.facebook.com/raheel.shah.92123015/",
     instagram: "https://www.instagram.com/raheel_shah315/"
