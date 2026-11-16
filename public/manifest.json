@@ -1,0 +1,20 @@
+{
+  "short_name": "Raheel Jamal",
+  "name": "Raheel Jamal | Solution Architect | Officer @UBL",
+  "icons": [
+    {
+      "src": "favicon.png?v=2",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "avatar.png?v=2",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#04080F",
+  "background_color": "#04080F"
+}
